@@ -1,26 +1,79 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import 'tailwindcss';
+@import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.rbc-today {
+  background-color: transparent !important;
+}
+
+.rbc-toolbar {
+  color: #e3e3e3 !important;
+  font-weight: bold;
+}
+
+.rbc-header {
+  color: #e3e3e3 !important;
+  font-weight: bold;
+}
+
+.rbc-timeslot-group {
+  color: #e3e3e3 !important;
+  /* font-size: medium; */
+}
+
+.rbc-time-slot {
+  border: none !important; /* remove half slot borders */
+}
+
+.rbc-current-time-indicator {
+  z-index: 3;
+  pointer-events: none;
+  background-color: #ff0000 !important;
+  height: 2px !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* Toolbar buttons */
+.rbc-toolbar button {
+  background-color: #38393b !important;
+  color: #b7b9b7 !important;
+  border: 1px solid #131314 !important;
+  border-radius: 20px !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s !important;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #444547 !important;
+  color: #b7b9b7 !important;
+}
+
+.rbc-btn-group > button:first-child:not(:last-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.rbc-btn-group > button:last-child:not(:first-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.rbc-btn-group > button:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+}
+
+.rbc-day-slot .rbc-event,
+.rbc-day-slot .rbc-background-event {
+  background-color: #828cc3 !important;
+  border: none !important;
+  color: black !important;
+  border-radius: 8px !important;
+  padding: 2px 6px !important;
 }
